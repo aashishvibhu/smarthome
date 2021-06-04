@@ -1,12 +1,12 @@
 #include <math.h>
 #include <LiquidCrystal.h>
-LiquidCrystal lcd( 7, 6, 5, 4, 3, 2); // 12,11,5,4,3,2 to 7,6,5,4,3,2
+LiquidCrystal lcd( 7, 6, 5, 4, 3, 2);
 
-const int lm=A1; // Assigning analog pin A1 to variable 'sensor'
+const int lm=A1;
 const int ldr=A2;
 const int pir=10;
-float lout;  //variable to store temperature in Fahreinheit 
-float tout;  //temporary variable to hold sensor reading
+float lout;
+float tout;
 float mout;
 int fan = 8;
 int light = 9;
@@ -18,7 +18,7 @@ float loutlux;
 
 void setup()
 {
-pinMode(lm,INPUT); // Configuring pin A1 as input
+pinMode(lm,INPUT);
 pinMode(ldr,INPUT);
 pinMode(pir,INPUT);
 pinMode(fan,OUTPUT);
@@ -33,7 +33,7 @@ void loop()
 {
   
 tout=analogRead(lm);
-tout=(tout*500)/1023; // Storing value in Degree Celsius
+tout=(tout*500)/1023;
 Serial.print("Temperature in C=");
 Serial.print(tout);
 Serial.println();
@@ -49,7 +49,7 @@ Serial.print(lout);
 Serial.println();
 mout=digitalRead(pir);
 
-delay(1000); //Delay of 1 second for ease of viewing 
+delay(1000);
 
 if (tout<28)
 {
